@@ -16,11 +16,21 @@ namespace Delpin
             Console.ReadKey();
             Console.Clear();
 
-            Debitor.OpretKunde();
+            Console.WriteLine("tryk 1 for at oprette en kunde, tryk to for at oprette en reservation");
+            string valg = Console.ReadLine();
 
-            //Bestilling.Reserver();
-           
+            if (valg == "1")
+            {
+                Console.Clear();
+                Debitor.OpretKunde();
+            }
+            if (valg == "2")
+            {
+                Console.Clear();
+                Bestilling.Reserver();
+            }
 
+            
             Console.ReadKey();
         }
     }
