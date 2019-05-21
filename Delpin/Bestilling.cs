@@ -12,9 +12,6 @@ namespace Delpin
 
         public static void Reserver()
         {
-            Console.WriteLine("indtast navnet på ressourcen du vil bestille");
-            string navn = Console.ReadLine();
-
             Console.WriteLine("indtast startdatoen på ressourcen du vil bestille");
             string ordrestart = Console.ReadLine();
 
@@ -33,8 +30,8 @@ namespace Delpin
             Console.WriteLine("indtast debitornummer");
             string dnr = Console.ReadLine();
 
-            string InsertReservation = $"insert into Reserveret (Navn, Orderstart, Orderslut, Total, tnr, rnr, dnr) " +
-                $"values ('{navn}', '{ordrestart}', '{ordreslut}', '{Total}', '{Tnr}', '{rnr}', '{dnr}')";
+            string InsertReservation = $"insert into Reserveret ( Orderstart, Orderslut, Total, tnr, rnr, dnr) " +
+                $"values ('{ordrestart}', '{ordreslut}', '{Total}', '{Tnr}', '{rnr}', '{dnr}')";
 
 
 
