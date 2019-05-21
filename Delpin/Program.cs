@@ -16,7 +16,9 @@ namespace Delpin
             Console.ReadKey();
             Console.Clear();
 
-            Bestilling.Reserver();
+            Debitor.OpretKunde();
+
+            //Bestilling.Reserver();
            
 
             Console.ReadKey();
