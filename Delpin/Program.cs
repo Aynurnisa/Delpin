@@ -16,7 +16,7 @@ namespace Delpin
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("tryk 1 for at oprette en kunde, tryk to for at oprette en reservation");
+            Console.WriteLine("tryk 1 for at oprette en kunde, tryk 2 for at oprette en reservation, tryk 3 for at se ledige ressourcer");
             string valg = Console.ReadLine();
 
             if (valg == "1")
