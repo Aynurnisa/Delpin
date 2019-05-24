@@ -30,7 +30,37 @@ namespace Delpin
                 Bestilling.Reserver();
             }
 
-            
+            DBManager dBManager = new DBManager();
+
+
+
+
+
+
+
+            List<AfdRessObj> listRessAfdObj = new List<AfdRessObj>();
+
+
+
+            listRessAfdObj = dBManager.FindLedigeResourcerForAfdeling();
+
+
+
+            foreach (AfdRessObj obj in listRessAfdObj)
+
+
+
+            {
+
+
+
+                Console.WriteLine(obj.Name + "\t" + obj.Pris + "\t" + obj.Adresse + "\t" + obj.PostNr);
+
+
+
+            }
+
+
             Console.ReadKey();
         }
     }
