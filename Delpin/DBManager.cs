@@ -110,28 +110,7 @@ namespace Delpin
 
         }
 
-        public void updateReservering(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
-        {
-            conn.Open();
-
-            SqlCommand com = new SqlCommand();
-            com.Connection = conn;
-
-            //string navn, int rnr, int aagang, string maerke, double pris, int anr
-
-            string sql = "update Reserveret " +
-                        "set" +
-                            " Navn = " + Navn +
-                            " Aagang = " + Aargang +
-                            " Maerke = " + Maerke +
-                            " Pris = " + Pris +
-                            " anr = " + anr +
-                        " Where rnr =" + rnr;
-            com.CommandText = sql;
-            com.ExecuteNonQuery();
-            conn.Close();
-
-        }
+        
 
         public List<AfdRessObj> FindLedigeResourcerForAfdeling()
         {
