@@ -55,8 +55,6 @@ namespace Delpin
 
             SqlDataReader myReader = null;
             string HentKunde = $"select * from v2_Debitor where dnr = '{dnr}'";
-            //Console.WriteLine(HentKunde);
-            //Console.ReadKey();
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
@@ -72,7 +70,7 @@ namespace Delpin
 
             while (myReader.Read())
             {
-                // formater data til console
+                
                 Console.Write(myReader["Navn"].ToString() + ", ");
 
                 Console.Write(myReader["Adresse"].ToString() + ", ");
