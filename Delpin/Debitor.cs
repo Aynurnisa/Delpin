@@ -29,7 +29,7 @@ namespace Delpin
             Console.WriteLine("indtast CVR eller CPR nummer");
             string kundenr = Console.ReadLine();
 
-            string OpretKunde = $"insert into Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
+            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
                 $"values ('{navn}', '{adresse}', '{postnr}', '{manr}', '{kundetype}', '{kundenr}')";
 
 
