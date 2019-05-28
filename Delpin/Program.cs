@@ -16,7 +16,9 @@ namespace Delpin
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("tryk 1 for at oprette en kunde, tryk 2 for at oprette en reservation, tryk 3 for at se ledige ressourcer");
+            Console.WriteLine("tryk 1 for at oprette en kunde, tryk 2 for at oprette en reservation, " +
+                "tryk 3 for at se ledige ressourcer, tryk 4 for at finde en kunde, tryk 5 for at slette kunde," +
+                " tryk 6 for at ændre kunde");
             string valg = Console.ReadLine();
 
             if (valg == "1")
@@ -45,8 +47,24 @@ namespace Delpin
                     Console.WriteLine(obj.Name + "\t" + obj.Pris + "\t" + obj.Adresse + "\t" + obj.PostNr);
                 }
             }
+            if (valg == "4")
+            {
+                Console.Clear();
+                Debitor.HentKunde();
+            }
+            if (valg == "5")
+            {
+                Console.Clear();
+                Debitor.SletKunde();
+            }
+            if (valg == "6")
+            {
+                Console.Clear();
+                Debitor.ÆndreKunde();
+            }
 
-            
+
+
 
 
             Console.ReadKey();
