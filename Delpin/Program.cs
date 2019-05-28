@@ -9,11 +9,12 @@ namespace Delpin
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
+            
+            
+                 
             Console.WriteLine("Velkommen, tryk enter for at fortsætte...");
-
             Console.ReadKey();
             Console.Clear();
             for (int i = 0; i != 10; i++)
@@ -88,9 +89,8 @@ namespace Delpin
                 }
             }
 
-
-
             Console.ReadKey();
+            
         }
     }
 }
