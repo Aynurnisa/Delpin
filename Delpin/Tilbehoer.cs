@@ -101,7 +101,7 @@ namespace Delpin
             com.ExecuteNonQuery();
         }
 
-        public static void LavReservationResourcer() //create
+        public static void LavReservationTilbehoer() //create
         {
             Console.WriteLine("indtast startdatoen på tilbehøret du vil bestille");
             string OrderStart = Console.ReadLine();

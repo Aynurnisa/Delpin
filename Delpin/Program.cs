@@ -19,11 +19,11 @@ namespace Delpin
             {
                 Console.Clear();
                 Console.WriteLine("tryk 1 for at oprette en kunde, ");
-                Console.WriteLine("tryk 2 for at oprette en reservation,");
-                Console.WriteLine("tryk 3 for at se ledige ressourcer, ");
-                Console.WriteLine("tryk 4 for at finde en kunde, ");
-                Console.WriteLine("tryk 5 for at slette kunde, ");
-                Console.WriteLine("tryk 6 for at ændre kunde, ");
+                Console.WriteLine("tryk 2 for at se ledige ressourcer, ");
+                Console.WriteLine("tryk 3 for at finde en kunde, ");
+                Console.WriteLine("tryk 4 for at slette kunde, ");
+                Console.WriteLine("tryk 5 for at ændre kunde, ");
+                Console.WriteLine("tryk 6 for at oprette en reservation på et tilbehør");
                 Console.WriteLine("tryk 7 for at se reservation ");
                 Console.WriteLine("tryk 10 for at lukke ned");
                 string valg = Console.ReadLine();
@@ -35,12 +35,6 @@ namespace Delpin
                     Console.ReadKey();
                 }
                 if (valg == "2")
-                {
-                    Console.Clear();
-                    Bestilling.Reserver();
-                    Console.ReadKey();
-                }
-                if (valg == "3")
                 {
 
                     Console.Clear();
@@ -57,22 +51,28 @@ namespace Delpin
                     }
                     Console.ReadKey();
                 }
-                if (valg == "4")
+                if (valg == "3")
                 {
                     Console.Clear();
                     Debitor.HentKunde();
                     Console.ReadKey();
                 }
-                if (valg == "5")
+                if (valg == "4")
                 {
                     Console.Clear();
                     Debitor.SletKunde();
                     Console.ReadKey();
                 }
-                if (valg == "6")
+                if (valg == "5")
                 {
                     Console.Clear();
                     Debitor.ÆndreKunde();
+                    Console.ReadKey();
+                }
+                if (valg == "6")
+                {
+                    Console.Clear();
+                    Tilbehoer.LavReservationTilbehoer();
                     Console.ReadKey();
                 }
                 if (valg == "7")
