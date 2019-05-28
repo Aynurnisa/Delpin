@@ -11,6 +11,7 @@ namespace Delpin
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Velkommen, tryk enter for at fortsætte...");
 
             Console.ReadKey();
