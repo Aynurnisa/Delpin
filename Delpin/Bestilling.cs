@@ -30,7 +30,7 @@ namespace Delpin
             Console.WriteLine("indtast debitornummer");
             string dnr = Console.ReadLine();
 
-            string InsertReservation = $"insert into Reserveret ( Orderstart, Orderslut, Total, tnr, rnr, dnr) " +
+            string InsertReservation = $"insert into v2_Reserveret ( Orderstart, Orderslut, Total, tnr, rnr, dnr) " +
                 $"values ('{ordrestart}', '{ordreslut}', '{Total}', '{Tnr}', '{rnr}', '{dnr}')";
 
 

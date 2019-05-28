@@ -18,9 +18,14 @@ namespace Delpin
             for (int i = 0; i != 10; i++)
             {
                 Console.Clear();
-                Console.WriteLine("tryk 1 for at oprette en kunde, tryk 2 for at oprette en reservation, " +
-                "tryk 3 for at se ledige ressourcer, tryk 4 for at finde en kunde, tryk 5 for at slette kunde," +
-                " tryk 6 for at ændre kunde");
+                Console.WriteLine("tryk 1 for at oprette en kunde, ");
+                Console.WriteLine("tryk 2 for at oprette en reservation,");
+                Console.WriteLine("tryk 3 for at se ledige ressourcer, ");
+                Console.WriteLine("tryk 4 for at finde en kunde, ");
+                Console.WriteLine("tryk 5 for at slette kunde, ");
+                Console.WriteLine("tryk 6 for at ændre kunde, ");
+                Console.WriteLine("tryk 7 for at se reservation ");
+                Console.WriteLine("tryk 10 for at lukke ned");
                 string valg = Console.ReadLine();
 
                 if (valg == "1")
@@ -70,10 +75,17 @@ namespace Delpin
                     Debitor.ÆndreKunde();
                     Console.ReadKey();
                 }
+                if (valg == "7")
+                {
+                    Console.Clear();
+                    Tilbehoer.HentReservationTilbehoer();
+                    Console.ReadKey();
+                }
+                if (valg == "10")
+                {
+                    Environment.Exit(0);
+                }
             }
-            
-
-
 
 
 
