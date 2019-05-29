@@ -118,11 +118,11 @@ namespace Delpin
             
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
-            
+
             string sql = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
-                         "from Ressourcer r join Afdeling a on not exists" +
-                         "(select '' from reserveret rs where rs.rnr = r.rnr)";
-            
+                         "from v2_Ressourcer r join v2_Afdeling a on not exists" +
+                         "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
+
             com.CommandText = sql;
             
             List<AfdRessObj> ressources = new List<AfdRessObj>();
