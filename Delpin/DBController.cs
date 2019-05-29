@@ -9,7 +9,5 @@ namespace Delpin
     class DBController
     {
         DBManager connection = new DBManager();
-        List<re>
-
     }
 }
