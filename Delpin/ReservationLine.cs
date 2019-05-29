@@ -14,7 +14,7 @@ namespace Delpin
         private double _TotalPris;
         private int _Debitornr;
         private int _Ressourcenr;
-        public Reservation(int ResNr, DateTime orderstart, DateTime orderSlut, double totalpris, int debitornr, int resourcenr)
+        public ReservationLine(int ResNr, DateTime orderstart, DateTime orderSlut, double totalpris, int debitornr, int resourcenr)
         {
             _ResNr = ResNr;
             _OrderStart = orderstart;
