@@ -11,12 +11,13 @@ namespace Delpin
     {
         public void OpretKunde(string navn, string adresse, string postnr, string manr, string kundetype, string kundenr)
         {
-            SqlConnection conn = new SqlConnection();
+            SqlConnection conn = new SqlConnection();//Definere et Objekt til at tage forbindelse med server. 
             conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
 
-            SqlCommand sqlCmd = new SqlCommand();
+            SqlCommand sqlCmd = new SqlCommand();//Definerer et Objekt til at tage imod Sql komandoer
 
-            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
+            /*@OpretKunde */
+            string opretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
                 $"values ('{navn}', '{adresse}', '{postnr}', '{manr}', '{kundetype}', '{kundenr}')";
 
             SqlCmd.CommandText = OpretKunde;
