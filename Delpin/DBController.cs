@@ -14,7 +14,7 @@ namespace Delpin
 
         public void HentLedigRessourcer(){
 
-            ressourcer = connection.FindAlleFrieRessourcer;
+            ressources = connection.FindAlleFrieRessourcer;
 
         }
 
