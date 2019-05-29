@@ -9,15 +9,7 @@ namespace Delpin
     class DBController
     {
         DBManager connection = new DBManager();
-        public List<ReservationLine> reservationLines = new List<ReservationLine>();
-        public List<Ressource> ressources = new List<Ressource>();
-
-        public void HentLedigRessourcer(){
-
-            ressourcer = connection.FindAlleFrieRessourcer;
-
-        }
-
+        List<re>
 
     }
 }
