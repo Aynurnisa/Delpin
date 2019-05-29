@@ -13,6 +13,8 @@ namespace Delpin
         {
             Console.WriteLine("Velkommen, tryk enter for at fortsætte...");
 
+            Tilbehoer t = new Tilbehoer();
+
             Console.ReadKey();
             Console.Clear();
             for (int i = 0; i != 10; i++)
@@ -79,6 +81,19 @@ namespace Delpin
                 {
                     Console.Clear();
                     Tilbehoer.HentReservationTilbehoer();
+                    Console.ReadKey();
+                }
+                if (valg == "8")
+                {
+                    Console.Clear();
+                    Tilbehoer.UpdaterReservationTilbehoer();
+                    Console.ReadKey();
+
+                }
+                if (valg == "9")
+                {
+                    Console.Clear();
+                    t.SletReservationTilbehoer();
                     Console.ReadKey();
                 }
                 if (valg == "10")
