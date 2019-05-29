@@ -20,18 +20,24 @@ namespace Delpin
         //startdate: hvornår man have ressourcen
         //slutdate: hvornår man formoder man er færdig med ressourcen
         //opt : whereString mulighed for at tilføre mere sql.
-        public List<Ressource> FindAlleFrieRessourcer(string startdate, string slutdate, string whereString = null)
+        public List<RessourceLine> FindAlleFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
 
             conn.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
 
-            string sql = "Select * from ressourcer " +
-                "where not exists (select '' reserveret " +
-                "where '" + startdate + "' <= reserveret.Orderslut " +
-                "and '" + slutdate + "' >= reserveret.Orderstart " +
-                "and reserveret.rnr = ressourcer.rnr) " + whereString;
+//select * from v2_Ressourcer
+//where not exists (select '' from v2_Reservation_Line_Ressourcer
+//where '2019/06/07' <= v2_Reservation_Line_Ressourcer.Orderslut and 
+//'2019/06/08' >= v2_Reservation_Line_Ressourcer.OrderStart 
+//and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr); 
+
+            string sql = "select * from v2_Ressourcer " +  
+                         "where not exists (select '' from v2_Reservation_Line_Ressourcer "+ 
+                         "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut and '" + slutdate
+                       + "' >= v2_Reservation_Line_Ressourcer.OrderStart and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) + whereString;"
+
 
             com.CommandText = sql;
 
@@ -93,12 +99,11 @@ namespace Delpin
 
             //string navn, int rnr, int aagang, string maerke, double pris, int anr
 
-            string sql = "delete reserveret where rnr"; 
+            string sql = "delete reserveret where rnr = '" + rnr "'"; 
 
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();
-
         }
 
         
