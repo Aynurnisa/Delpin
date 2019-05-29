@@ -20,9 +20,6 @@ namespace Delpin
         //startdate: hvornår man have ressourcen
         //slutdate: hvornår man formoder man er færdig med ressourcen
         //opt : whereString mulighed for at tilføre mere sql.
-
-
-
         public List<Ressource> FindAlleFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
 
