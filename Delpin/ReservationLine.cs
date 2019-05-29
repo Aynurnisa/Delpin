@@ -74,6 +74,20 @@ namespace Delpin
 
 
 
+            get
+
+
+
+            {
+
+
+
+                return _Tilbehornr;
+
+
+
+            }
+
 
 
         }

@@ -54,7 +54,6 @@
     <Compile Include="Ressource.cs" />
     <Compile Include="Tilbehoer.cs" />
     <Compile Include="Totalpris.cs" />
-    <Compile Include="consolUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
