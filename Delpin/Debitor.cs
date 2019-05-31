@@ -9,45 +9,25 @@ namespace Delpin
 {
     class Debitor
     {
-        public static void OpretKunde()
+        public void OpretKunde(string navn, string adresse, string postnr, string manr, string kundetype, string kundenr)
         {
-            Console.WriteLine("indtast dit navn");
-            string navn = Console.ReadLine();
+            SqlConnection conn = new SqlConnection();//Definere et Objekt til at tage forbindelse med server. 
+            conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
 
-            Console.WriteLine("indtast din adresse");
-            string adresse = Console.ReadLine();
+            SqlCommand sqlCmd = new SqlCommand();//Definerer et Objekt til at tage imod Sql komandoer
 
-            Console.WriteLine("indtast postnr");
-            string postnr = Console.ReadLine();
-
-            Console.WriteLine("indtast medarbejdernr");
-            string manr = Console.ReadLine();
-
-            Console.WriteLine("indtast kundetype ( e for erhverv eller p for privat");
-            string kundetype = Console.ReadLine();
-
-            Console.WriteLine("indtast CVR eller CPR nummer");
-            string kundenr = Console.ReadLine();
-
-            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
+            /*@OpretKunde */
+            string opretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
                 $"values ('{navn}', '{adresse}', '{postnr}', '{manr}', '{kundetype}', '{kundenr}')";
 
-
-
-            Console.WriteLine(OpretKunde);
-            Console.ReadKey();
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
+            SqlCmd.CommandText = OpretKunde;
+            
             conn.Open();
-
-            SqlCommand com = new SqlCommand();
-            com.Connection = conn;
-            com.CommandText = OpretKunde;
-            com.ExecuteNonQuery();
+            sqlCmd.ExecuteNonQuery();
 
             conn.Close();
         }
+
         public static void HentKunde()
         {
             Console.WriteLine("Indtast dnr");

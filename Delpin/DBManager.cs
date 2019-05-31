@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Delpin
 {
-    class DBManager
+   class DBManager
     {
         private const string username = "user id = delpin1;";
         private const string server = "server = den1.mssql7.gear.host;";
