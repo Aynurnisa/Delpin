@@ -15,14 +15,14 @@ namespace Delpin
         private string adresse;
         private int postNr;
 
-        public RessObj(string _name, int _resNr, string _maerke, int _pris, string _adresse, int _postNr)
+        public RessObj(string name, int resNr, string maerke, int pris, string adresse, int postNr)
         {
-            name = _name;
-            resNr = _resNr;
-            maerke = _maerke;
-            pris = _pris;
-            adresse = _adresse;
-            postNr = _postNr;
+            this.name = name;
+            this.resNr = resNr;
+            this.maerke = maerke;
+            this.pris = pris;
+            this.adresse = adresse;
+            this.postNr = postNr;
         }
 
         public string Name
@@ -46,14 +46,12 @@ namespace Delpin
             get { return pris; }
         }
 
-
         public string Adresse
         {
 
             get { return adresse; }
 
         }
-
 
         public int PostNr
         {
