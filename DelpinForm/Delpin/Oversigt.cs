@@ -17,22 +17,39 @@ namespace Delpin
         private const string server = "server = den1.mssql7.gear.host;";
         private const string pwd = "password=Ju67eM1Z!?q1;";
         private const string db = "database = delpin1;";
-        private SqlConnection conn = new SqlConnection(server + db + username + pwd);
+        
         private List<RessObj> ressources;
         
         public Oversigt()
         {
             ressources = new List<RessObj>();
+            InitializeComponent();
+        }
 
-            SqlCommand com = new SqlCommand();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listView1.View = View.Details;
+            listView1.GridLines = true;
+            listView1.FullRowSelect = true;
+
+            listView1.Columns.Add("Navn", 50);
+            listView1.Columns.Add("rnr", 50);
+            listView1.Columns.Add("Maerke", 50);
+            listView1.Columns.Add("Pris", 50);
+            listView1.Columns.Add("Adresse", 50);
+            listView1.Columns.Add("PostNr", 50);
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
 
             string sql = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
 
-            com.CommandText = sql;
-            conn.Open();
+            SqlCommand com = new SqlCommand(sql,conn);
+            com.Connection.Open();
             SqlDataReader reader = com.ExecuteReader();
+            
 
             while (reader.Read())
             {
@@ -48,35 +65,29 @@ namespace Delpin
             }
 
             reader.Close();
-            conn.Close();
+            com.Connection.Close();
 
-            InitializeComponent();
+            
+            
+                string[] stringArr = new string[5];
+                stringArr[0] = "does";
+                stringArr[1] = "this";
+                stringArr[2] = "work";
+                stringArr[3] = "?";
+                stringArr[4] = "F";
+                stringArr[5] = "G";
+                ListViewItem itm = new ListViewItem();
+            
+            
+                listView1.Items.Add(itm);
+                
         }
 
-        private void Oversigt_Load()
+        private void PrintElements(List<RessObj> res)
         {
-
-            listView1.Columns.Add("Navn");
-            listView1.Columns.Add("rnr");
-            listView1.Columns.Add("Maerke");
-            listView1.Columns.Add("Pris");
-            listView1.Columns.Add("Adresse");
-            listView1.Columns.Add("PostNr");
-            ListViewItem itm;
-            string[] stringArr = new string[5];
-
-            for (int i = 0; i <= 5; i++)
-            {
-                stringArr[i] = ressources[0].Name;
-                stringArr[i] = ressources[1].ResNr.ToString();
-                stringArr[i] = ressources[2].Maerke;
-                stringArr[i] = ressources[3].Pris.ToString();
-                stringArr[i] = ressources[4].Adresse;
-                stringArr[i] = ressources[5].PostNr.ToString();
-                itm = new ListViewItem(stringArr);
-                listView1.Items.Add(itm);
+            foreach (RessObj elm in res) {
+                Console.WriteLine("Elements in List "+"\t"+ elm.Navn +"\t"+ elm.PostNr);
             }
-
         }
     }
 }

@@ -8,16 +8,16 @@ namespace Delpin
 {
     class RessObj
     {
-        private string name;
+        private string navn;
         private int resNr;
         private string maerke;
         private int pris;
         private string adresse;
         private int postNr;
 
-        public RessObj(string name, int resNr, string maerke, int pris, string adresse, int postNr)
+        public RessObj(string navn, int resNr, string maerke, int pris, string adresse, int postNr)
         {
-            this.name = name;
+            this.navn = navn;
             this.resNr = resNr;
             this.maerke = maerke;
             this.pris = pris;
@@ -25,9 +25,9 @@ namespace Delpin
             this.postNr = postNr;
         }
 
-        public string Name
+        public string Navn
         {
-            get { return name; }
+            get { return navn; }
         }
 
         public int ResNr
