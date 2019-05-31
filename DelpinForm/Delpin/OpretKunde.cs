@@ -21,6 +21,7 @@ namespace Delpin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
             $"values ('{textBox1.Text}', '{textBox2.Text}', {textBox4.Text}, '{textBox3.Text}', {textBox5.Text}, '{textBox6.Text}', {textBox8.Text}, '{textBox7.Text}')";
            
