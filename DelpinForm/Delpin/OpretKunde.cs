@@ -29,8 +29,7 @@ namespace Delpin
 
             SqlCommand com = new SqlCommand();
             com.CommandText = OpretKunde;
-            com.Connection = conn;
-            com.Connection.Open();
+            conn.Open();
             com.ExecuteNonQuery();
 
             conn.Close();
@@ -43,7 +42,6 @@ namespace Delpin
             textBox6.Clear();
             textBox7.Clear();
             textBox8.Clear();
-
         }
         
     }

@@ -16,8 +16,8 @@ namespace Delpin
 
             SqlCommand sqlCmd = new SqlCommand();
 
-            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
-                $"values ('{navn}', '{adresse}', '{postnr}', '{manr}', '{kundetype}', '{kundenr}')";
+            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
+            $"values ('{textBox1.Text}', '{textBox2.Text}', {textBox4.Text}, '{textBox3.Text}', {textBox5.Text}, '{textBox6.Text}', {textBox8.Text}, '{textBox7.Text}')";
 
             SqlCmd.CommandText = OpretKunde;
             
