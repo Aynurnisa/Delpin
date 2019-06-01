@@ -13,21 +13,19 @@ namespace Delpin
 {
     public partial class Oversigt : Form
     {
-        private const string username = "user id = delpin1;";
-        private const string server = "server = den1.mssql7.gear.host;";
-        private const string pwd = "password=Ju67eM1Z!?q1;";
-        private const string db = "database = delpin1;";
+        private const string username = "User Id=delpin1;";
+        private const string server = "Data Source=den1.mssql7.gear.host;";
+        private const string pwd = "Password=Ju67eM1Z!?q1";
+        private const string db = "Initial Catalog=delpin1;";
         
         private List<RessObj> ressources;
         
         public Oversigt()
         {
             ressources = new List<RessObj>();
+            
             InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
@@ -39,6 +37,28 @@ namespace Delpin
             listView1.Columns.Add("Adresse", 50);
             listView1.Columns.Add("PostNr", 50);
 
+            PopulateList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string[] arr = new string[6];
+
+            for(int i = 0; i < ressources.Count; i++) {
+                arr[0] = ressources[i].Navn;
+                arr[1] = ressources[i].ResNr.ToString();
+                arr[2] = ressources[i].Maerke;
+                arr[3] = ressources[i].Pris.ToString();
+                arr[4] = ressources[i].Adresse;
+                arr[5] = ressources[i].PostNr.ToString();
+
+                ListViewItem itm = new ListViewItem(arr);
+                listView1.Items.Add(itm);
+            }
+        }
+
+        private void PopulateList()
+        {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
 
@@ -46,13 +66,11 @@ namespace Delpin
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
 
-            SqlCommand com = new SqlCommand(sql,conn);
+            SqlCommand com = new SqlCommand(sql, conn);
             com.Connection.Open();
             SqlDataReader reader = com.ExecuteReader();
-            
 
-            while (reader.Read())
-            {
+            while (reader.Read()) {
                 ressources.Add(
                     new RessObj(
                     Convert.ToString(reader["Navn"]),
@@ -66,28 +84,15 @@ namespace Delpin
 
             reader.Close();
             com.Connection.Close();
-
-            
-            
-                string[] stringArr = new string[5];
-                stringArr[0] = "does";
-                stringArr[1] = "this";
-                stringArr[2] = "work";
-                stringArr[3] = "?";
-                stringArr[4] = "F";
-                stringArr[5] = "G";
-                ListViewItem itm = new ListViewItem();
-            
-            
-                listView1.Items.Add(itm);
-                
         }
 
+        /*Test Code:::Must Delete::*/
         private void PrintElements(List<RessObj> res)
         {
             foreach (RessObj elm in res) {
                 Console.WriteLine("Elements in List "+"\t"+ elm.Navn +"\t"+ elm.PostNr);
             }
         }
+
     }
 }
