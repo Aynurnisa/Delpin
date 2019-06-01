@@ -14,6 +14,12 @@ namespace Delpin
 {
     public partial class OpretKunde : Form
     {
+        private const string username = "User Id=delpin1;";
+        private const string server = "Data Source=den1.mssql7.gear.host;";
+        private const string pwd = "Password=Ju67eM1Z!?q1";
+        private const string db = "Initial Catalog=delpin1;";
+        SqlConnection conn = new SqlConnection(server + db + username + pwd);
+
         public OpretKunde()
         {
             InitializeComponent();
@@ -21,19 +27,21 @@ namespace Delpin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string OpretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
-            $"values ('{textBox1.Text}', '{textBox2.Text}', {textBox4.Text}, '{textBox3.Text}', {textBox5.Text}, '{textBox6.Text}', {textBox8.Text}, '{textBox7.Text}')";
-           
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
+            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
+            $"values ('{textBox1.Text}'," +
+                   $" '{textBox2.Text}'," +
+                   $" {textBox4.Text}," +
+                   $" '{textBox3.Text}'," +
+                   $" {textBox5.Text}," +
+                   $" '{textBox6.Text}'," +
+                   $" {textBox8.Text}," +
+                   $" '{textBox7.Text}')";
 
-            SqlCommand com = new SqlCommand();
-            com.CommandText = OpretKunde;
-            conn.Open();
+            SqlCommand com = new SqlCommand(sqlCmdText, conn);
+            com.Connection.Open();
             com.ExecuteNonQuery();
 
-            conn.Close();
+            com.Connection.Close();
 
             textBox1.Clear();
             textBox2.Clear();

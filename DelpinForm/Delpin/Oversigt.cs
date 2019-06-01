@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -17,7 +11,8 @@ namespace Delpin
         private const string server = "Data Source=den1.mssql7.gear.host;";
         private const string pwd = "Password=Ju67eM1Z!?q1";
         private const string db = "Initial Catalog=delpin1;";
-        
+        SqlConnection conn = new SqlConnection(server + db + username + pwd);
+
         private List<RessObj> ressources;
         
         public Oversigt()
@@ -30,11 +25,11 @@ namespace Delpin
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
 
-            listView1.Columns.Add("Navn", 50);
+            listView1.Columns.Add("Navn", 75);
             listView1.Columns.Add("rnr", 50);
-            listView1.Columns.Add("Maerke", 50);
+            listView1.Columns.Add("Maerke", 150);
             listView1.Columns.Add("Pris", 50);
-            listView1.Columns.Add("Adresse", 50);
+            listView1.Columns.Add("Adresse", 150);
             listView1.Columns.Add("PostNr", 50);
 
             PopulateList();
@@ -59,14 +54,11 @@ namespace Delpin
 
         private void PopulateList()
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=den1.mssql7.gear.host; Initial Catalog=delpin1; User Id=delpin1; Password=Ju67eM1Z!?q1";
-
-            string sql = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
+            string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
 
-            SqlCommand com = new SqlCommand(sql, conn);
+            SqlCommand com = new SqlCommand(sqlCmdText, conn);
             com.Connection.Open();
             SqlDataReader reader = com.ExecuteReader();
 
@@ -85,14 +77,5 @@ namespace Delpin
             reader.Close();
             com.Connection.Close();
         }
-
-        /*Test Code:::Must Delete::*/
-        private void PrintElements(List<RessObj> res)
-        {
-            foreach (RessObj elm in res) {
-                Console.WriteLine("Elements in List "+"\t"+ elm.Navn +"\t"+ elm.PostNr);
-            }
-        }
-
     }
 }
