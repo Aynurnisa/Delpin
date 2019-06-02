@@ -26,8 +26,14 @@ namespace Delpin
                 Console.WriteLine("tryk 4 for at slette kunde, ");
                 Console.WriteLine("tryk 5 for at ændre kunde, ");
                 Console.WriteLine("tryk 6 for at oprette en reservation på et tilbehør");
-                Console.WriteLine("tryk 7 for at se reservation ");
-                Console.WriteLine("tryk 10 for at lukke ned");
+                Console.WriteLine("tryk 7 for at se reservation på tilbehør");
+                Console.WriteLine("tryk 8 for at opdatere en reservation på tilbehør");
+                Console.WriteLine("tryk 9 for at slette en reservation på et tilbehør");
+                Console.WriteLine("tryk 10 for at oprette en reservation på et Ressource");
+                Console.WriteLine("tryk 11 for at se reservation på Ressource");
+                Console.WriteLine("tryk 12 for at opdatere en reservation på Ressource");
+                Console.WriteLine("tryk 13 for at slette en reservation på et Ressource");
+                Console.WriteLine("tryk 14 for at lukke ned");
                 string valg = Console.ReadLine();
 
                 if (valg == "1")
@@ -97,6 +103,30 @@ namespace Delpin
                     Console.ReadKey();
                 }
                 if (valg == "10")
+                {
+                    Console.Clear();
+                    Ressource.LavReservationRessourcer();
+                    Console.ReadKey();
+                }
+                if (valg == "11")
+                {
+                    Console.Clear();
+                    Ressource.HentReservationRessourcer();
+                    Console.ReadKey();
+                }
+                if (valg == "12")
+                {
+                    Console.Clear();
+                    Ressource.UpdaterReservationRessourcer();
+                    Console.ReadKey();
+                }
+                if (valg == "13")
+                {
+                    Console.Clear();
+                    Ressource.SletReservationRessourcer();
+                    Console.ReadKey();
+                }
+                if (valg == "14")
                 {
                     Environment.Exit(0);
                 }
