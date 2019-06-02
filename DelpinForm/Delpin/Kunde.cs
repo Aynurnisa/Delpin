@@ -64,8 +64,7 @@ namespace Delpin
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            OpretKunde opretKunde = new OpretKunde();
-            opretKunde.ShowDialog();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
