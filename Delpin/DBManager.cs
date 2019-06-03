@@ -27,11 +27,12 @@ namespace Delpin
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
 
-            string sql = "Select * from ressourcer " +
-                "where not exists (select '' reserveret " +
-                "where '" + startdate + "' <= reserveret.Orderslut " +
-                "and '" + slutdate + "' >= reserveret.Orderstart " +
-                "and reserveret.rnr = ressourcer.rnr) " + whereString;
+            string sql = "select * from v2_Ressourcer " +
+                "where not exists" +
+                    "(select '' from v2_Reservation_Line_Ressourcer " +
+                    "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut " +
+                    "and '" + slutdate + "' >= v2_Reservation_Line_Ressourcer.OrderStart " +
+                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr);";
 
             com.CommandText = sql;
 
@@ -42,10 +43,13 @@ namespace Delpin
             {
                 //string navn, int rnr, int aagang, string maerke, double pris, int anr
 
+                //DateTime dateTime = (dateTime) 
+
+
                 Ressource r = new Ressource(
                     Convert.ToString(reader["Navn"]),
                     Convert.ToInt32(reader["rnr"]),
-                    Convert.ToInt32(reader["Aagang"]),
+                    Convert.ToInt32(reader["Aargang"]),
                     Convert.ToString(reader["Maerke"]),
                     Convert.ToDouble(reader["Pris"]),
                     Convert.ToInt32(reader["anr"])
@@ -58,7 +62,8 @@ namespace Delpin
             return ressources;
         }
 
-        public void updateReservering(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
+
+        public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
         {
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -66,7 +71,7 @@ namespace Delpin
 
             //string navn, int rnr, int aagang, string maerke, double pris, int anr
 
-            string sql = "update Reserveret " +
+            string sql = "update v2_Ressourcer " +
                         "set" +
                             " Navn = " + Navn +
                             " Aagang = " + Aargang +
@@ -88,7 +93,7 @@ namespace Delpin
 
 
 
-        public void deleteReservering(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
+        public void deleteReservering(int rnr)
         {
 
 
@@ -99,7 +104,7 @@ namespace Delpin
 
             //string navn, int rnr, int aagang, string maerke, double pris, int anr
 
-            string sql = "delete reserveret where rnr"; 
+            string sql = "delete reserveret where rnr = " + rnr;
 
             com.CommandText = sql;
             com.ExecuteNonQuery();
