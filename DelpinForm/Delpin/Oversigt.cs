@@ -17,6 +17,7 @@ namespace Delpin
         
         public Oversigt()
         {
+            
             ressources = new List<RessObj>();
             
             InitializeComponent();

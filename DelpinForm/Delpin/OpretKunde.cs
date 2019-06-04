@@ -40,7 +40,6 @@ namespace Delpin
             SqlCommand com = new SqlCommand(sqlCmdText, conn);
             com.Connection.Open();
             com.ExecuteNonQuery();
-
             com.Connection.Close();
 
             textBox1.Clear();

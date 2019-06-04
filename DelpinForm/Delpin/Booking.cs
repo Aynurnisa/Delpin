@@ -89,8 +89,6 @@ namespace Delpin
                 MessageBox.Show(beforeStart);
                 dateTimePicker2.Value = DateTime.Now;
             }
-
-
         }
 
         private void label3_Click(object sender, EventArgs e)
