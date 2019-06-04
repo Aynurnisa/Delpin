@@ -49,23 +49,27 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.listView3 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Maerke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,7 +78,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(153, 20);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 37);
             this.button1.TabIndex = 0;
@@ -94,7 +98,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(48, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 2;
@@ -102,7 +106,7 @@
             // listView1
             // 
             this.listView1.Location = new System.Drawing.Point(13, 78);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(244, 245);
             this.listView1.TabIndex = 3;
@@ -111,7 +115,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(13, 339);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 37);
             this.button3.TabIndex = 5;
@@ -175,7 +179,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(216, 275);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(87, 19);
             this.checkBox1.TabIndex = 18;
@@ -184,17 +188,24 @@
             // 
             // listView2
             // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.navn,
+            this.nr,
+            this.Aargang,
+            this.Maerke});
             this.listView2.Location = new System.Drawing.Point(0, 21);
-            this.listView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(318, 234);
             this.listView2.TabIndex = 20;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.ListView2_SelectedIndexChanged);
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(0, 271);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(135, 21);
             this.textBox8.TabIndex = 22;
@@ -203,7 +214,7 @@
             // listView4
             // 
             this.listView4.Location = new System.Drawing.Point(106, 470);
-            this.listView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView4.Margin = new System.Windows.Forms.Padding(2);
             this.listView4.Name = "listView4";
             this.listView4.Size = new System.Drawing.Size(740, 318);
             this.listView4.TabIndex = 30;
@@ -212,7 +223,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(106, 792);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 37);
             this.button5.TabIndex = 33;
@@ -222,7 +233,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(733, 793);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(115, 37);
             this.button8.TabIndex = 34;
@@ -232,7 +243,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(1049, 792);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(115, 37);
             this.button10.TabIndex = 36;
@@ -288,6 +299,17 @@
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tilbehør";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(189, 275);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(87, 19);
+            this.checkBox2.TabIndex = 42;
+            this.checkBox2.Text = "Udbringing";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // listView3
             // 
@@ -346,46 +368,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kunde";
             // 
-            // label10
+            // label15
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(866, 29);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 15);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Slut dato";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(359, 237);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 15);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "tom";
             // 
-            // dateTimePicker2
+            // label14
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(932, 29);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(175, 21);
-            this.dateTimePicker2.TabIndex = 29;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(649, 29);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 21);
-            this.dateTimePicker1.TabIndex = 28;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            this.dateTimePicker1.DropDown += new System.EventHandler(this.dateTimePicker1_dropdown);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(582, 29);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 15);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Start dato";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(300, 237);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 15);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "CVR";
             // 
             // label7
             // 
@@ -438,36 +439,64 @@
             this.label13.Text = "tom";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // label14
+            // label10
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(300, 237);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 15);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "CVR";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(866, 29);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 15);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Slut dato";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // label15
+            // dateTimePicker2
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(359, 237);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 15);
-            this.label15.TabIndex = 52;
-            this.label15.Text = "tom";
+            this.dateTimePicker2.Location = new System.Drawing.Point(932, 29);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(175, 21);
+            this.dateTimePicker2.TabIndex = 29;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // checkBox2
+            // dateTimePicker1
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(189, 275);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 19);
-            this.checkBox2.TabIndex = 42;
-            this.checkBox2.Text = "Udbringing";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(649, 29);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 21);
+            this.dateTimePicker1.TabIndex = 28;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.DropDown += new System.EventHandler(this.dateTimePicker1_dropdown);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(582, 29);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 15);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Start dato";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // navn
+            // 
+            this.navn.Text = "Navn";
+            this.navn.Width = 106;
+            // 
+            // nr
+            // 
+            this.nr.Text = "NR";
+            this.nr.Width = 66;
+            // 
+            // Aargang
+            // 
+            this.Aargang.Text = "Årgang";
+            // 
+            // Maerke
+            // 
+            this.Maerke.Text = "Mærke";
             // 
             // Booking
             // 
@@ -493,7 +522,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Booking";
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
@@ -548,5 +577,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ColumnHeader navn;
+        private System.Windows.Forms.ColumnHeader nr;
+        private System.Windows.Forms.ColumnHeader Aargang;
+        private System.Windows.Forms.ColumnHeader Maerke;
     }
 }

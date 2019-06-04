@@ -105,5 +105,10 @@ namespace Delpin
         {
 
         }
+
+        private void ListView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

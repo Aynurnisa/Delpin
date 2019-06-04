@@ -1,7 +1,8 @@
 ﻿using System;
 
-public class consolUI
+public class Class1
 {
-    DBController dBController = new DBController();
-    
+	public Class1()
+	{
+	}
 }
